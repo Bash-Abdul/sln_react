@@ -4,7 +4,7 @@ import panels from '../../assets/panelss.webp'
 const About = () => {
   return (
     <div className='py-15'>
-      <div>
+      <div className='grid grid-cols-2 gap-10rem'>
         <img src={panels} alt="about image" />
         <div>
           <h1>

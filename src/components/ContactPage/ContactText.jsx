@@ -3,6 +3,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { GrLocation } from "react-icons/gr";
 import { FaRegClock } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const ContactText = () => {
   return (

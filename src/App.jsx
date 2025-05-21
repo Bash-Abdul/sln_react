@@ -11,10 +11,13 @@ const Contact = lazy(() => import('./pages/Contact/Contact'))
 
 function Loading() {
   return (
-    <div className='bg-[#181918] h-screen w-screen fixed top-0 left-0 z-1000 flex items-center justify-center'>
-      <div className=''>
-        <p className='text-white text-2xl'>Loading...</p>
-      </div>
+    // <div className='bg-[#181918] h-screen w-screen fixed top-0 left-0 z-1000 flex items-center justify-center'>
+    //   <div className=''>
+    //     <p className='text-white text-2xl'>Loading...</p>
+    //   </div>
+    // </div>
+    <div class="loader__container">
+      <div class="loader"></div>
     </div>
   )
 }

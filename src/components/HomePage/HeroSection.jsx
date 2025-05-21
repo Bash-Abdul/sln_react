@@ -1,5 +1,6 @@
 import React from 'react'
 import home from '../../assets/home.jpg'
+import { Link } from 'react-router-dom'
 
 const HeroSection = () => {
   return (
@@ -11,9 +12,11 @@ const HeroSection = () => {
         <h1 className="text-3xl md:text-5xl font-semibold leading-tight mb-6 mt-3">
         Your Gateway to Cutting-Edge Engineering Solutions!
         </h1>
+        <Link to={'services'}>
         <button className="cursor-pointer bg-white text-blue-600 px-6 py-3 text-sm font-semibold hover:bg-blue-100 transition">
           Explore Services
         </button>
+        </Link>
       </div>
     </section>
   )

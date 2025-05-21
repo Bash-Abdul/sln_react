@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import HeroSection from './HomePage/HeroSection';
+import FixedButtons from './FixedButtons';
 
 export default function Layout({ children }) {
     const location = useLocation();
@@ -10,6 +11,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar isHomePage={isHomePage}/>
+      <FixedButtons/>
 
       {/* {showHero && <HeroSection/>} */}
       {isHomePage && <HeroSection />}

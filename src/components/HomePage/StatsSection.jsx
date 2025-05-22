@@ -152,10 +152,9 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <div className='w-full bg-blue-800'>
-        <div className="relative overflow-hidden py-20">
-      {/* Sparkles */}
-      {sparkles.map((sparkle) => (
+    <div className='w-full bg-blue-800 flex items-center justify-center relative overflow-hidden py-20'>
+       {/* Sparkles */}
+       {sparkles.map((sparkle) => (
         <Sparkle
           key={sparkle.id}
           style={{
@@ -169,17 +168,18 @@ const StatsSection = () => {
           }}
         />
       ))}
+        <div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 z-10 relative">
-        <h2 className="text-4xl font-bold text-white text-center mb-3">
+      <div className="px-4 z-10 relative">
+        <h2 className="text-2xl font-bold text-white text-center mb-5">
           Trusted by Businesses to Drive Growth and Success
         </h2>
-        <p className="text-white text-center mb-16 text-lg">
+        <p className="text-white text-center mb-16 text-sm">
           We connect you with the right services and solutions to help your business thrive.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
           <StatCard number="100" label="Satisfied Clients" />
           <StatCard number="200" label="Successful Referrals" />
           <StatCard number="50" label="Partnered Businesses" />

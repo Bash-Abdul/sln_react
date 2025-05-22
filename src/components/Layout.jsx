@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <main className={`w-full max-w-7xl px-4 mx-auto py-8 ${!isHomePage ? 'pt-[7rem]' : ''}`}>
         {children}
       </main>
-      {isHomePage && <StatsSection/>}
+      {/* {isHomePage && <StatsSection/>} */}
       <Footer />
     </>
   );

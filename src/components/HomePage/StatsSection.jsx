@@ -152,7 +152,7 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <div className='w-full bg-blue-800 flex items-center justify-center relative overflow-hidden py-20'>
+    <div className='w-screen -mx-[calc((100vw-100%)/2)] bg-blue-800 flex items-center justify-center relative overflow-hidden py-20'>
        {/* Sparkles */}
        {sparkles.map((sparkle) => (
         <Sparkle

@@ -1,10 +1,133 @@
+// import React from 'react'
+// import { FaArrowRight } from "react-icons/fa6";
+// import globe from '../../assets/globe.png'
+// import quality from '../../assets/quality.png'
+// import bulb from '../../assets/lightbulb.png'
+// import shake from '../../assets/hand-shake.png'
+
+
+// const features = [
+//     {
+//         title: "Holistic Expertise",
+//         description: "One-stop-shop for a diverse range of engineering services.",
+//         number: "01",
+//         image: globe
+//     },
+//     {
+//         title: "Quality Assurance",
+//         description: "Adherence to the highest standards, ensuring reliability and excellence.",
+//         number: "02",
+//         image: quality
+//     },
+//     {
+//         title: "Innovation Hub",
+//         description: "Stay ahead with cutting-edge technology and sustainable practices.",
+//         number: "03",
+//         image: bulb
+//     },
+//     {
+//         title: "Client-Focused",
+//         description: "Tailored solutions that prioritize your unique needs.",
+//         number: "04",
+//         image: shake
+//     }
+// ];
+
+
+
+// const Welcome = () => {
+//     return (
+//         <div className='py-10'>
+//             <h1 className='text-2xl text-center mb-15'>WELCOME TO SLN ENGINEERING LIMITED</h1>
+
+//             <div className='grid grid-cols-2 gap-15'>
+//                 <div>
+//                     <h3 className='text-sm'>Welcome to SLN Engineering Limited, where innovation, expertise, and dedication converge to redefine the landscape of engineering solutions. With a steadfast commitment to excellence, we have emerged as a leading provider of comprehensive services in the fields of engineering, procurement, construction, and beyond.</h3>
+
+//                     <p className='text-xs py-4'>At SLN, we specialize in a spectrum of services tailored to meet the diverse needs of our clients. Our core offerings encompass:</p>
+
+//                     <ul className='mt-5 flex flex-col gap-2 text-sm'>
+//                         <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' /> Engineering Excellence</li>
+//                         <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Powering Tomorrow</li>
+//                         <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Precision Mechanical Services</li>
+//                         <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Automation Redefined</li>
+//                         <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Facility Management Mastery</li>
+//                         <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />And many more..</li>
+//                     </ul>
+//                 </div>
+
+//                 {/* <div className='grid grid-cols-2 gap-10 gap-y-15 stuff'>
+
+//                 <div>
+//                     <div className='flex items-center justify-between mb-3 relative'>
+//                         <h1 className='font-semibold'>Holistic Expertise</h1>
+//                         <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
+//                         <img src={globe} alt="" className='w-[3rem]' />
+//                     </div>
+//                     <p>One-stop-shop for a diverse range of engineering services.</p>
+//                 </div>
+
+//                 <div>
+//                     <div className='flex items-center justify-between mb-3 relative'>
+//                         <h1 className='font-semibold'>Quality Assurance</h1>
+//                         <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
+//                         <img src={globe} alt="" className='w-[3rem]' />
+//                     </div>
+//                     <p>Adherence to the highest standards, ensuring reliability and excellence.</p>
+//                 </div>
+
+//                 <div>
+//                     <div className='flex items-center justify-between mb-3 relative'>
+//                         <h1 className='font-semibold'>  Innovation HUb</h1>
+//                         <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
+//                         <img src={globe} alt="" className='w-[3rem]' />
+//                     </div>
+//                     <p>Stay ahead with cutting-edge technology and sustainable practices.</p>
+//                 </div>
+
+//                 <div>
+//                     <div className='flex items-center justify-between mb-3 relative'>
+//                         <h1 className='font-semibold'>Client-Focused</h1>
+//                         <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
+//                         <img src={globe} alt="" className='w-[3rem]' />
+//                     </div>
+//                     <p>Tailored solutions that prioritize your unique needs.</p>
+//                 </div>
+
+
+
+//             </div> */}
+
+//                 <div className='grid grid-cols-2 gap-10 gap-y-15 stuff'>
+//                     {features.map((feature, index) => (
+//                         <div key={index}>
+//                             <div className='flex items-center justify-between mb-3 relative'>
+//                                 <h1 className='font-semibold'>{feature.title}</h1>
+//                                 <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>
+//                                     {feature.number}
+//                                 </h1>
+//                                 <img src={feature.image} alt="" className='w-[3rem]' />
+//                             </div>
+//                             <p>{feature.description}</p>
+//                         </div>
+//                     ))}
+//                 </div>
+
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Welcome
+
+
+
 import React from 'react'
 import { FaArrowRight } from "react-icons/fa6";
 import globe from '../../assets/globe.png'
 import quality from '../../assets/quality.png'
 import bulb from '../../assets/lightbulb.png'
 import shake from '../../assets/hand-shake.png'
-
 
 const features = [
     {
@@ -33,72 +156,52 @@ const features = [
     }
 ];
 
-
-
 const Welcome = () => {
     return (
-        <div className='py-10'>
-            <h1 className='text-2xl text-center mb-15'>WELCOME TO SLN ENGINEERING LIMITED</h1>
+        <div className='py-10 px-4'>
+            <h1 className='text-xl md:text-2xl text-center mb-10'>
+                WELCOME TO SLN ENGINEERING LIMITED
+            </h1>
 
-            <div className='grid grid-cols-2 gap-15'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-15'>
                 <div>
-                    <h3 className='text-sm'>Welcome to SLN Engineering Limited, where innovation, expertise, and dedication converge to redefine the landscape of engineering solutions. With a steadfast commitment to excellence, we have emerged as a leading provider of comprehensive services in the fields of engineering, procurement, construction, and beyond.</h3>
+                    <h3 className='text-sm md:text-base'>
+                        Welcome to SLN Engineering Limited, where innovation, expertise, and dedication converge to redefine the landscape of engineering solutions. With a steadfast commitment to excellence, we have emerged as a leading provider of comprehensive services in the fields of engineering, procurement, construction, and beyond.
+                    </h3>
 
-                    <p className='text-xs py-4'>At SLN, we specialize in a spectrum of services tailored to meet the diverse needs of our clients. Our core offerings encompass:</p>
+                    <p className='text-sm py-4'>
+                        At SLN, we specialize in a spectrum of services tailored to meet the diverse needs of our clients. Our core offerings encompass:
+                    </p>
 
-                    <ul className='mt-5 flex flex-col gap-2 text-sm'>
-                        <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' /> Engineering Excellence</li>
-                        <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Powering Tomorrow</li>
-                        <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Precision Mechanical Services</li>
-                        <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Automation Redefined</li>
-                        <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />Facility Management Mastery</li>
-                        <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5' />And many more..</li>
+                    <ul className='mt-5 flex flex-col gap-2 text-sm md:text-base'>
+                        <li className='flex items-center gap-2'>
+                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            Engineering Excellence
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            Powering Tomorrow
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            Precision Mechanical Services
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            Automation Redefined
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            Facility Management Mastery
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            And many more..
+                        </li>
                     </ul>
                 </div>
 
-                {/* <div className='grid grid-cols-2 gap-10 gap-y-15 stuff'>
-
-                <div>
-                    <div className='flex items-center justify-between mb-3 relative'>
-                        <h1 className='font-semibold'>Holistic Expertise</h1>
-                        <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
-                        <img src={globe} alt="" className='w-[3rem]' />
-                    </div>
-                    <p>One-stop-shop for a diverse range of engineering services.</p>
-                </div>
-
-                <div>
-                    <div className='flex items-center justify-between mb-3 relative'>
-                        <h1 className='font-semibold'>Quality Assurance</h1>
-                        <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
-                        <img src={globe} alt="" className='w-[3rem]' />
-                    </div>
-                    <p>Adherence to the highest standards, ensuring reliability and excellence.</p>
-                </div>
-
-                <div>
-                    <div className='flex items-center justify-between mb-3 relative'>
-                        <h1 className='font-semibold'>  Innovation HUb</h1>
-                        <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
-                        <img src={globe} alt="" className='w-[3rem]' />
-                    </div>
-                    <p>Stay ahead with cutting-edge technology and sustainable practices.</p>
-                </div>
-
-                <div>
-                    <div className='flex items-center justify-between mb-3 relative'>
-                        <h1 className='font-semibold'>Client-Focused</h1>
-                        <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>01</h1>
-                        <img src={globe} alt="" className='w-[3rem]' />
-                    </div>
-                    <p>Tailored solutions that prioritize your unique needs.</p>
-                </div>
-
-
-
-            </div> */}
-
-                <div className='grid grid-cols-2 gap-10 gap-y-15 stuff'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-15'>
                     {features.map((feature, index) => (
                         <div key={index}>
                             <div className='flex items-center justify-between mb-3 relative'>
@@ -112,10 +215,9 @@ const Welcome = () => {
                         </div>
                     ))}
                 </div>
-
             </div>
         </div>
-    )
+    );
 }
 
-export default Welcome
+export default Welcome;

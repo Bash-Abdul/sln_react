@@ -7,6 +7,7 @@ import wrench from '../../assets/wrench.png'
 import blueprint from '../../assets/blueprint.png'
 import toolbox from '../../assets/toolbox.png'
 import solar from '../../assets/solar-energy.png'
+import Ready from '../../components/Ready'
 
 const Services = () => {
   // Services data array
@@ -78,6 +79,9 @@ const Services = () => {
           </div>
         ))}
       </div>
+
+
+      <Ready/>
     </div>
   )
 }

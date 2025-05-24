@@ -147,7 +147,7 @@ const Service = () => {
         {servicesData.map((service) => (
           <div key={service.id} className='py-9 px-6 hover:shadow-md'>
             <img src={service.icon} alt={service.title} className='w-[3rem]' />
-            <h3 className='text-lg md:text-xl text-blue-700 font-semibold py-6'>{service.title}</h3>
+            <h3 className='text-lg md:text-xl text-blue-800 font-semibold py-6'>{service.title}</h3>
             <p className='text-sm text-gray-500 leading-relaxed'>{service.description}</p>
           </div>
         ))}
@@ -155,7 +155,7 @@ const Service = () => {
 
       <div className='flex items-center justify-center mt-6'>
         <Link to={'/services'}>
-          <button className='bg-blue-600 text-white text-sm py-3 px-6 cursor-pointer'>
+          <button className='bg-blue-800 text-white text-sm py-3 px-6 cursor-pointer'>
             View More
           </button>
         </Link>

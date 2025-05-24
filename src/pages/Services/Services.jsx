@@ -74,7 +74,7 @@ const Services = () => {
         {servicesData.map((service) => (
           <div key={service.id} className='py-9 px-6 hover:shadow-md '>
             <img src={service.icon} alt={service.title} className='w-[3rem]' />
-            <h3 className='text-xl text-blue-700 font-semibold py-6'>{service.title}</h3>
+            <h3 className='text-xl text-blue-800 font-semibold py-6'>{service.title}</h3>
             <p className='text-xs text-gray-400 leading-relaxed'>{service.description}</p>
           </div>
         ))}

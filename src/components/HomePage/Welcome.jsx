@@ -175,27 +175,27 @@ const Welcome = () => {
 
                     <ul className='mt-5 flex flex-col gap-2 text-sm md:text-base'>
                         <li className='flex items-center gap-2'>
-                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            <FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5 h-5' />
                             Engineering Excellence
                         </li>
                         <li className='flex items-center gap-2'>
-                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            <FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5 h-5' />
                             Powering Tomorrow
                         </li>
                         <li className='flex items-center gap-2'>
-                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            <FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5 h-5' />
                             Precision Mechanical Services
                         </li>
                         <li className='flex items-center gap-2'>
-                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            <FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5 h-5' />
                             Automation Redefined
                         </li>
                         <li className='flex items-center gap-2'>
-                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            <FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5 h-5' />
                             Facility Management Mastery
                         </li>
                         <li className='flex items-center gap-2'>
-                            <FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5 h-5' />
+                            <FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5 h-5' />
                             And many more..
                         </li>
                     </ul>
@@ -211,7 +211,7 @@ const Welcome = () => {
                                 </h1>
                                 <img src={feature.image} alt="" className='w-[3rem]' />
                             </div>
-                            <p>{feature.description}</p>
+                            <p className=''>{feature.description}</p>
                         </div>
                     ))}
                 </div>

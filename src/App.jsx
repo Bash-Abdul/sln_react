@@ -16,8 +16,8 @@ function Loading() {
     //     <p className='text-white text-2xl'>Loading...</p>
     //   </div>
     // </div>
-    <div class="loader__container">
-      <div class="loader"></div>
+    <div className="loader__container">
+      <div className="loader"></div>
     </div>
   )
 }

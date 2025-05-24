@@ -9,7 +9,7 @@ const Ready = () => {
 
                 <div className='flex justify-center'>
                     <Link to={'/contact'}>
-                        <div className='bg-[#005eb1] text-sm text-white py-4 px-5 cursor-pointer text-center flex rounded-md'>
+                        <div className='bg-blue-800 text-sm text-white py-4 px-5 cursor-pointer text-center flex rounded-md'>
                             Contact Us
                         </div>
                     </Link>

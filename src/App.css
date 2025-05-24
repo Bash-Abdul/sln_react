@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* @theme {
+  --main-blue: #005eb1;
+  --main-dark-blue: #0a0f3e;
+  --color-grey: #ababab;
+  --color-grey-2: #68696c;
+  --color-dark: #333333;
+} */
+
+@theme {
+  --color-main-blue: #005eb1;
+  --color-dark-blue: #0a0f3e;
+  --color-grey: #ababab;
+  --color-grey-2: #68696c;
+  --color-dark-grey:#333333;
+  --color-behind: rgba(0, 173, 239, 0.3);
+}
+
 
 body{
   font-family: "Poppins", sans-serif;
@@ -111,7 +128,8 @@ body{
 
 
 .ready__title span {
-  color: #005eb1;
+  /* color: #005eb1; */
+  color: #193cb8;
   display: inline-block;
   animation-name: loading;
   animation-duration: 3s;

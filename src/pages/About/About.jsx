@@ -14,17 +14,17 @@ const About = () => {
           <div className='mt-5'>
             <p>Choosing the right partner for your engineering needs is pivotal. At SLN, we stand as the premier choice for comprehensive engineering solutions. Here's why discerning clients trust us:</p>
             <ul className='mt-5 grid grid-cols-2 gap-8'>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/> Comprehensive Expertise</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>Innovation at the Core</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>Seasoned Professionals</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>Reliability and Timeliness</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>Unparalleled Quality</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>Client-Centric Approach</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>Sustainability Focus</li>
-              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-600 text-white rounded-full p-1 w-5  h-5'/>End-to-End Solutions</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/> Comprehensive Expertise</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>Innovation at the Core</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>Seasoned Professionals</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>Reliability and Timeliness</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>Unparalleled Quality</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>Client-Centric Approach</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>Sustainability Focus</li>
+              <li className='flex items-center gap-2'><FaArrowRight className='bg-blue-800 text-white rounded-full p-1 w-5  h-5'/>End-to-End Solutions</li>
             </ul>
 
-            <button className='bg-blue-600 px-4 py-5 text-white text-sm mt-5 cursor-pointer'>SEE OUR SERVICES</button>
+            <button className='bg-blue-800 px-4 py-5 text-white text-sm mt-8 cursor-pointer'>SEE OUR SERVICES</button>
           </div>
         </div>
       </div>

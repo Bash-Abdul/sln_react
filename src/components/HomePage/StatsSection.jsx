@@ -110,9 +110,9 @@ import React, { useEffect, useState } from 'react';
 const StatCard = ({ number, label }) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="text-white text-7xl font-bold flex items-center">
+      <div className="text-white text-5xl lg:text-7xl font-bold flex items-center">
         {number}
-        <span className="text-4xl ml-1 mt-2">+</span>
+        <span className="text-2xl lg:text-4xl ml-1 mt-2">+</span>
       </div>
       <div className="text-white mt-2">{label}</div>
     </div>
@@ -179,7 +179,7 @@ const StatsSection = () => {
           We connect you with the right services and solutions to help your business thrive.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
           <StatCard number="100" label="Satisfied Clients" />
           <StatCard number="200" label="Successful Referrals" />
           <StatCard number="50" label="Partnered Businesses" />

@@ -9,7 +9,7 @@ const HeroSection = () => {
       style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${home})` }}>
       <div className="max-w-3xl">
         <p  className='text-main-blue text-xl'>Empowering Tomorrow</p>
-        <h1 className="text-3xl md:text-5xl font-semibold leading-tight mb-6 mt-3">
+        <h1 className="text-2xl md:text-5xl font-semibold leading-tight mb-6 mt-3">
         Your Gateway to Cutting-Edge Engineering Solutions!
         </h1>
         <Link to={'services'}>

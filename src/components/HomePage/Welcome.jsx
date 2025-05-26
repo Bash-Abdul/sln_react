@@ -163,7 +163,7 @@ const Welcome = () => {
                 WELCOME TO SLN ENGINEERING LIMITED
             </h1>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-15'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-10 md:gap-15'>
                 <div>
                     <h3 className='text-sm md:text-base'>
                         Welcome to SLN Engineering Limited, where innovation, expertise, and dedication converge to redefine the landscape of engineering solutions. With a steadfast commitment to excellence, we have emerged as a leading provider of comprehensive services in the fields of engineering, procurement, construction, and beyond.
@@ -201,17 +201,17 @@ const Welcome = () => {
                     </ul>
                 </div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-15'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-y-15 gap-10 md:gap-15'>
                     {features.map((feature, index) => (
                         <div key={index}>
-                            <div className='flex items-center justify-between mb-3 relative'>
+                            <div className='flex items-center justify-between mb-3 relative flex-col-reverse gap-4'>
                                 <h1 className='font-semibold'>{feature.title}</h1>
-                                <h1 className='text-5xl text-blue-200 font-semibold absolute z-[-1000] left-[-4%]'>
+                                <h1 className='text-5xl text-blue-200 font-semibold static lg:absolute z-[-1000] left-[-4%]'>
                                     {feature.number}
                                 </h1>
                                 <img src={feature.image} alt="" className='w-[3rem]' />
                             </div>
-                            <p className=''>{feature.description}</p>
+                            <p className='text-center'>{feature.description}</p>
                         </div>
                     ))}
                 </div>

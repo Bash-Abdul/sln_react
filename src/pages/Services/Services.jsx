@@ -66,11 +66,11 @@ const Services = () => {
   return (
     <div className='py-15'>
       <div className='flex justify-center items-center w-full flex-col gap-4 text-center'>
-        <h1 className='text-3xl font-semibold'>Discover Services Designed to Help You Thrive</h1>
-        <p className='text-xs w-[50%] leading-relaxed'>Your trusted partner in delivering a comprehensive suite of engineering solutions tailored to meet your diverse needs. With a commitment to excellence, innovation, and client satisfaction, we offer a wide range of services that cater to various facets of the engineering landscape.</p>
+        <h1 className='text-xl lg:text-3xl font-semibold'>Discover Services Designed to Help You Thrive</h1>
+        <p className='text-xs text-[85%] lg:w-[50%] leading-relaxed'>Your trusted partner in delivering a comprehensive suite of engineering solutions tailored to meet your diverse needs. With a commitment to excellence, innovation, and client satisfaction, we offer a wide range of services that cater to various facets of the engineering landscape.</p>
       </div>
 
-      <div className='w-full grid grid-cols-3 gap-[2rem] py-15 pt-20'>
+      <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem] py-15 pt-20'>
         {servicesData.map((service) => (
           <div key={service.id} className='py-9 px-6 hover:shadow-md '>
             <img src={service.icon} alt={service.title} className='w-[3rem]' />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const HeroSection = () => {
   return (
-    <section className="h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4"
+    <section className="h-[82vh] lg:h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4"
     
       style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${home})` }}>
       <div className="max-w-3xl">

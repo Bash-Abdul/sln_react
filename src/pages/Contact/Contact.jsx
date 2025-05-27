@@ -6,7 +6,7 @@ import LocationMap from '../../components/LocationMap'
 const Contact = () => {
   return (
     <div>
-      <div className='grid grid-cols-2 gap-[3rem] py-15'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-[3rem] py-15'>
       <ContactForm/>
       <ContactText/>
     </div>

@@ -1,28 +1,144 @@
+// import React from 'react'
+// import home from '../../assets/home.jpg'
+// import { Link } from 'react-router-dom'
+
+// const HeroSection = () => {
+//   return (
+//     <section className="h-[82vh] lg:h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4"
+    
+//       style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${home})` }}>
+//       <div className="max-w-3xl">
+//         <p  className='text-main-blue text-xl'>Empowering Tomorrow</p>
+//         <h1 className="text-2xl md:text-5xl font-semibold leading-tight mb-6 mt-3">
+//         Your Gateway to Cutting-Edge Engineering Solutions!
+//         </h1>
+//         <Link to={'services'}>
+//         <button className="cursor-pointer bg-white text-main-blue px-6 py-3 text-sm font-semibold hover:bg-blue-100 transition">
+//           Explore Services
+//         </button>
+//         </Link>
+//       </div>
+//     </section>
+//   )
+// }
+
+// export default HeroSection
+
 import React from 'react'
 import home from '../../assets/home.jpg'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const HeroSection = () => {
   return (
-    <section className="h-[82vh] lg:h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4"
-    
-      style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${home})` }}>
+    <section
+      className="h-[82vh] lg:h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${home})`,
+      }}
+    >
       <div className="max-w-3xl">
-        <p  className='text-main-blue text-xl'>Empowering Tomorrow</p>
-        <h1 className="text-2xl md:text-5xl font-semibold leading-tight mb-6 mt-3">
-        Your Gateway to Cutting-Edge Engineering Solutions!
-        </h1>
-        <Link to={'services'}>
-        <button className="cursor-pointer bg-white text-main-blue px-6 py-3 text-sm font-semibold hover:bg-blue-100 transition">
-          Explore Services
-        </button>
-        </Link>
+        {/* Fade in from the spot */}
+        <motion.p
+          className="text-main-blue text-xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          Empowering Tomorrow
+        </motion.p>
+
+        <motion.h1
+          className="text-2xl md:text-5xl font-semibold leading-tight mb-6 mt-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.6 }}
+        >
+          Your Gateway to Cutting-Edge Engineering Solutions!
+        </motion.h1>
+
+        {/* Fade in from bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          <Link to={'services'}>
+            <button className="cursor-pointer bg-white text-main-blue px-6 py-3 text-sm font-semibold hover:bg-blue-100 transition">
+              Explore Services
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   )
 }
 
 export default HeroSection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import React from 'react'
 // import home from '../../assets/home.jpg'

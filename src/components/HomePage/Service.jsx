@@ -82,18 +82,115 @@
 
 
 
-import React from 'react'
+
+
+
+// I NEED TO COME BACK TO THIS 
+// import React from 'react'
+// import facility from '../../assets/facility.png'
+// import epc from '../../assets/epc.png'
+// import power from '../../assets/power.png'
+// import automation from '../../assets/automation.png'
+// import wrench from '../../assets/wrench.png'
+// import blueprint from '../../assets/blueprint.png'
+// import toolbox from '../../assets/toolbox.png'
+// import solar from '../../assets/solar-energy.png'
+// import { Link } from 'react-router-dom'
+
+// const Service = () => {
+
+//   const servicesData = [
+//     {
+//       id: 1,
+//       icon: facility,
+//       title: "Facility Management",
+//       description: "We take pride in managing facilities with precision, ensuring operational smoothness and maintaining peak performance standards."
+//     },
+//     {
+//       id: 2,
+//       icon: epc,
+//       title: "Engineering Procurement and Construction (EPC)",
+//       description: "Transform your visions into reality with our end-to-end EPC services. From conceptualization to execution, we seamlessly integrate engineering, procurement, and construction processes to deliver projects that stand the test of time.."
+//     },
+//     {
+//       id: 3,
+//       icon: power,
+//       title: "Power and Energy Solutions:",
+//       description: "At the forefront of energy innovation, we engineer sustainable power solutions that empower industries, communities, and businesses. From conventional to renewable energy sources, we ensure reliability and efficiency in every solution."
+//     },
+//     {
+//       id: 4,
+//       icon: wrench,
+//       title: "Mechanical Services",
+//       description: "Precision and durability define our Mechanical Services. Our expert team ensures that mechanical systems operate seamlessly, delivering performance that exceeds industry standards.."
+//     },
+//     {
+//       id: 5,
+//       icon: automation,
+//       title: "Automation",
+//       description: "Embracing cutting-edge technology, we deploy automation solutions that optimize operations and streamline processes, enhancing productivity and performance."
+//     },
+//     {
+//       id: 6,
+//       icon: blueprint,
+//       title: "Engineering Designs and Consultancy",
+//       description: "Our team of experts offers innovative designs and strategic consultancy services, providing tailored solutions to complex engineering challenges."
+//     },
+//   ];
+
+//   return (
+//     <div className='py-15 px-4'>
+//       <div className='flex justify-center items-center w-full flex-col gap-4 text-center'>
+//         <p className='text-lg md:text-xl font-semibold'>Our Services</p>
+//         <h1 className='text-2xl md:text-4xl font-semibold md:w-[50%] w-full leading-relaxed'>
+//           Discover Services Designed to Help You Thrive
+//         </h1>
+//       </div>
+
+//       <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-[2rem] py-10 md:py-15'>
+//         {servicesData.map((service) => (
+//           <div key={service.id} className='py-9 px-6 hover:shadow-md'>
+//             <img src={service.icon} alt={service.title} className='w-[3rem]' />
+//             <h3 className='text-lg md:text-xl text-blue-800 font-semibold py-6'>{service.title}</h3>
+//             <p className='text-sm text-gray-500 leading-relaxed'>{service.description}</p>
+//           </div>
+//         ))}
+//       </div>
+
+//       <div className='flex items-center justify-center mt-6'>
+//         <Link to={'/services'}>
+//           <button className='bg-blue-800 text-white text-sm py-3 px-6 cursor-pointer'>
+//             View More
+//           </button>
+//         </Link>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default Service;
+
+
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import facility from '../../assets/facility.png'
 import epc from '../../assets/epc.png'
 import power from '../../assets/power.png'
 import automation from '../../assets/automation.png'
 import wrench from '../../assets/wrench.png'
 import blueprint from '../../assets/blueprint.png'
-import toolbox from '../../assets/toolbox.png'
-import solar from '../../assets/solar-energy.png'
 import { Link } from 'react-router-dom'
 
 const Service = () => {
+  const headersRef = useRef(null);
+  const groupOneRef = useRef(null);
+  const groupTwoRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  const headersInView = useInView(headersRef, { once: false, margin: '-100px' });
+  const groupOneInView = useInView(groupOneRef, { once: false, margin: '-100px' });
+  const groupTwoInView = useInView(groupTwoRef, { once: false, margin: '-100px' });
+  const buttonInView = useInView(buttonRef, { once: false, margin: '-100px' });
 
   const servicesData = [
     {
@@ -136,30 +233,72 @@ const Service = () => {
 
   return (
     <div className='py-15 px-4'>
-      <div className='flex justify-center items-center w-full flex-col gap-4 text-center'>
+
+      {/* Header Section */}
+      <motion.div
+        ref={headersRef}
+        className='flex justify-center items-center w-full flex-col gap-4 text-center'
+        initial={{ opacity: 0, y: 40 }}
+        animate={headersInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         <p className='text-lg md:text-xl font-semibold'>Our Services</p>
         <h1 className='text-2xl md:text-4xl font-semibold md:w-[50%] w-full leading-relaxed'>
           Discover Services Designed to Help You Thrive
         </h1>
-      </div>
+      </motion.div>
 
+      {/* Service Cards */}
       <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-[2rem] py-10 md:py-15'>
-        {servicesData.map((service) => (
-          <div key={service.id} className='py-9 px-6 hover:shadow-md'>
+
+        {/* First 3 services */}
+        {servicesData.slice(0, 3).map((service, index) => (
+          <motion.div
+            key={service.id}
+            ref={index === 0 ? groupOneRef : null} // attach ref only once
+            className='py-9 px-6 hover:shadow-md'
+            initial={{ opacity: 0, y: 40 }}
+            animate={groupOneInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+          >
             <img src={service.icon} alt={service.title} className='w-[3rem]' />
             <h3 className='text-lg md:text-xl text-blue-800 font-semibold py-6'>{service.title}</h3>
             <p className='text-sm text-gray-500 leading-relaxed'>{service.description}</p>
-          </div>
+          </motion.div>
         ))}
+
+        {/* Next 3 services */}
+        {servicesData.slice(3, 6).map((service, index) => (
+          <motion.div
+            key={service.id}
+            ref={index === 0 ? groupTwoRef : null}
+            className='py-9 px-6 hover:shadow-md'
+            initial={{ opacity: 0, y: 40 }}
+            animate={groupTwoInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+          >
+            <img src={service.icon} alt={service.title} className='w-[3rem]' />
+            <h3 className='text-lg md:text-xl text-blue-800 font-semibold py-6'>{service.title}</h3>
+            <p className='text-sm text-gray-500 leading-relaxed'>{service.description}</p>
+          </motion.div>
+        ))}
+
       </div>
 
-      <div className='flex items-center justify-center mt-6'>
+      {/* View More Button */}
+      <motion.div
+        ref={buttonRef}
+        className='flex items-center justify-center mt-6'
+        initial={{ opacity: 0, y: 30 }}
+        animate={buttonInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
         <Link to={'/services'}>
           <button className='bg-blue-800 text-white text-sm py-3 px-6 cursor-pointer'>
             View More
           </button>
         </Link>
-      </div>
+      </motion.div>
     </div>
   )
 }

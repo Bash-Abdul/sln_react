@@ -242,8 +242,13 @@ const Service = () => {
         animate={headersInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <p className='text-lg md:text-xl font-semibold'>Our Services</p>
-        <h1 className='text-2xl md:text-4xl font-semibold md:w-[50%] w-full leading-relaxed'>
+        {/* <p className='text-lg md:text-xl font-semibold'>Our Services</p> */}
+        <div className='w-full text-center inline-flex gap-2 items-center justify-center'>
+        
+        <p className='text-lg md:text-xl inline-block'>Our Services</p>
+        <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
+      </div>
+        <h1 className='text-2xl md:text-4xl md:w-[50%] w-full leading-relaxed'>
           Discover Services Designed to Help You Thrive
         </h1>
       </motion.div>

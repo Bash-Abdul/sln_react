@@ -7,6 +7,7 @@ const Home = lazy(() => import('./pages/Home/Home'))
 const About = lazy(() => import('./pages/About/About'))
 const Services = lazy(() => import('./pages/Services/Services'))
 const Contact = lazy(() => import('./pages/Contact/Contact'))
+import ScrollToTop from './components/ScrollToTop';
 
 
 function Loading() {
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <Layout>
+      <ScrollToTop />
       <Routes location={location} key={location.key}>
         <Route path='/' element={
           <Suspense fallback={<Loading />}>

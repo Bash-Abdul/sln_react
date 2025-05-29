@@ -158,6 +158,28 @@ body{
 }
 
 
+/* Add this to your main stylesheet */
+.animated-letter {
+  color: #193cb8;
+  display: inline-block;
+  animation-name: loadings;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animated-letter:nth-child(1) { animation-delay: .3s; }
+.animated-letter:nth-child(2) { animation-delay: .9s; }
+.animated-letter:nth-child(3) { animation-delay: 1.4s; }
+
+@keyframes loadings {
+  0%, 80% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+
 .background{
   background-color: rgba(24,25,24,.92);
 }

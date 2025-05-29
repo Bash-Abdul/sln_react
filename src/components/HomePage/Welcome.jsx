@@ -279,9 +279,11 @@ const Welcome = () => {
 
   return (
     <div className='py-10 px-4'>
-      <h1 className='text-xl md:text-2xl text-center mb-10'>
-        WELCOME TO SLN ENGINEERING LIMITED
-      </h1>
+      <div className='w-full text-center mb-10 inline-flex gap-2 items-center justify-center'>
+        
+        <h1 className='text-xl md:text-2xl inline-block'>WELCOME TO SLN ENGINEERING LIMITED</h1>
+        <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
+      </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-10 md:gap-15'>
 

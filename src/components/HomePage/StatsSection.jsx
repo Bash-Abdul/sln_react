@@ -3,9 +3,9 @@
 // const StatCard = ({ number, label }) => {
 //   return (
 //     <div className="flex flex-col items-center">
-//       <div className="text-white text-7xl font-bold flex items-center">
+//       <div className="text-white text-5xl lg:text-7xl font-bold flex items-center">
 //         {number}
-//         <span className="text-4xl ml-1 mt-2">+</span>
+//         <span className="text-2xl lg:text-4xl ml-1 mt-2">+</span>
 //       </div>
 //       <div className="text-white mt-2">{label}</div>
 //     </div>
@@ -14,8 +14,8 @@
 
 // const Sparkle = ({ style }) => {
 //   return (
-//     <div 
-//       className="absolute rounded-full bg-white opacity-70"
+//     <div
+//       className="absolute rounded-full bg-white"
 //       style={style}
 //     />
 //   );
@@ -23,31 +23,31 @@
 
 // const StatsSection = () => {
 //   const [sparkles, setSparkles] = useState([]);
-  
+
 //   useEffect(() => {
-//     // Generate random sparkles
 //     const generateSparkles = () => {
 //       const newSparkles = [];
 //       for (let i = 0; i < 50; i++) {
 //         newSparkles.push({
 //           id: i,
-//           size: Math.random() * 6 + 2, // 2-8px
+//           size: Math.random() * 6 + 2, // 2–8px
 //           left: `${Math.random() * 100}%`,
 //           top: `${Math.random() * 100}%`,
-//           animationDuration: `4s`,
-//           opacity: Math.random() * 0.7 + 0.1
+//           animationDuration: `${Math.random() * 2 + 2}s`, // ⬅️ 1–2s for faster motion
+//           animationDelay: `${Math.random()}s`,
+//           opacity: Math.random() * 0.5 + 0.4, // 0.4–0.9
 //         });
 //       }
 //       setSparkles(newSparkles);
 //     };
-    
+
 //     generateSparkles();
 //   }, []);
-  
+
 //   return (
-//     <div className="relative w-full bg-blue-700 overflow-hidden py-20">
-//       {/* Animated sparkles */}
-//       {sparkles.map((sparkle) => (
+//     <div className='w-screen -mx-[calc((100vw-100%)/2)] bg-blue-800 flex items-center justify-center relative overflow-hidden py-20'>
+//        {/* Sparkles */}
+//        {sparkles.map((sparkle) => (
 //         <Sparkle
 //           key={sparkle.id}
 //           style={{
@@ -56,62 +56,70 @@
 //             left: sparkle.left,
 //             top: sparkle.top,
 //             opacity: sparkle.opacity,
-//             animation: `float ${sparkle.animationDuration} linear infinite`,
+//             animation: `float ${sparkle.animationDuration} ease-in-out infinite`,
+//             animationDelay: sparkle.animationDelay,
 //           }}
 //         />
 //       ))}
-      
-//       {/* Main content */}
-//       <div className="container mx-auto px-4 z-10 relative">
-//         <h2 className="text-4xl font-bold text-white text-center mb-3">
+//         <div>
+
+//       {/* Main Content */}
+//       <div className="px-4 z-10 relative">
+//         <h2 className="text-2xl font-bold text-white text-center mb-5">
 //           Trusted by Businesses to Drive Growth and Success
 //         </h2>
-//         <p className="text-white text-center mb-16 text-lg">
+//         <p className="text-white text-center mb-16 text-sm">
 //           We connect you with the right services and solutions to help your business thrive.
 //         </p>
-        
-//         {/* Stats */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+
+//         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
 //           <StatCard number="100" label="Satisfied Clients" />
 //           <StatCard number="200" label="Successful Referrals" />
 //           <StatCard number="50" label="Partnered Businesses" />
 //           <StatCard number="5" label="Years of Experience" />
 //         </div>
 //       </div>
-      
-//       {/* CSS for floating animation */}
-//       {/* <style jsx>{`
+
+//       {/* Keyframes */}
+//       <style>{`
 //         @keyframes float {
 //           0% {
-//             transform: translate(0, 0);
-//           }
-//           25% {
-//             transform: translate(10px, 20px);
+//             transform: translateY(0) scale(1);
+//             opacity: 1;
 //           }
 //           50% {
-//             transform: translate(-5px, 40px);
-//           }
-//           75% {
-//             transform: translate(-15px, 20px);
+//             transform: translateX(-70px) scale(1.3); /* ⬅️ More movement */
+//             opacity: 0.3;
 //           }
 //           100% {
-//             transform: translate(0, 0);
+//             transform: translateY(0) scale(1);
+//             opacity: 1;
 //           }
 //         }
-//       `}</style> */}
+//       `}</style>
 //     </div>
+//     </div>
+
 //   );
 // };
 
 // export default StatsSection;
 
-import React, { useEffect, useState } from 'react';
 
-const StatCard = ({ number, label }) => {
+
+import React, { useEffect, useState, useRef } from 'react';
+import CountUp from 'react-countup';
+import { useInView } from 'framer-motion';
+
+const StatCard = ({ number, label, startCount }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="text-white text-5xl lg:text-7xl font-bold flex items-center">
-        {number}
+        {startCount ? (
+          <CountUp end={number} duration={2} />
+        ) : (
+          0
+        )}
         <span className="text-2xl lg:text-4xl ml-1 mt-2">+</span>
       </div>
       <div className="text-white mt-2">{label}</div>
@@ -130,6 +138,8 @@ const Sparkle = ({ style }) => {
 
 const StatsSection = () => {
   const [sparkles, setSparkles] = useState([]);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   useEffect(() => {
     const generateSparkles = () => {
@@ -137,12 +147,12 @@ const StatsSection = () => {
       for (let i = 0; i < 50; i++) {
         newSparkles.push({
           id: i,
-          size: Math.random() * 6 + 2, // 2–8px
+          size: Math.random() * 6 + 2,
           left: `${Math.random() * 100}%`,
           top: `${Math.random() * 100}%`,
-          animationDuration: `${Math.random() * 2 + 2}s`, // ⬅️ 1–2s for faster motion
+          animationDuration: `${Math.random() * 2 + 2}s`,
           animationDelay: `${Math.random()}s`,
-          opacity: Math.random() * 0.5 + 0.4, // 0.4–0.9
+          opacity: Math.random() * 0.5 + 0.4,
         });
       }
       setSparkles(newSparkles);
@@ -152,9 +162,12 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <div className='w-screen -mx-[calc((100vw-100%)/2)] bg-blue-800 flex items-center justify-center relative overflow-hidden py-20'>
-       {/* Sparkles */}
-       {sparkles.map((sparkle) => (
+    <div
+      ref={sectionRef}
+      className='w-screen -mx-[calc((100vw-100%)/2)] bg-blue-800 flex items-center justify-center relative overflow-hidden py-20'
+    >
+      {/* Sparkles */}
+      {sparkles.map((sparkle) => (
         <Sparkle
           key={sparkle.id}
           style={{
@@ -168,7 +181,6 @@ const StatsSection = () => {
           }}
         />
       ))}
-        <div>
 
       {/* Main Content */}
       <div className="px-4 z-10 relative">
@@ -180,10 +192,10 @@ const StatsSection = () => {
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
-          <StatCard number="100" label="Satisfied Clients" />
-          <StatCard number="200" label="Successful Referrals" />
-          <StatCard number="50" label="Partnered Businesses" />
-          <StatCard number="5" label="Years of Experience" />
+          <StatCard number={100} label="Satisfied Clients" startCount={isInView} />
+          <StatCard number={200} label="Successful Referrals" startCount={isInView} />
+          <StatCard number={50} label="Partnered Businesses" startCount={isInView} />
+          <StatCard number={5} label="Years of Experience" startCount={isInView} />
         </div>
       </div>
 
@@ -195,7 +207,7 @@ const StatsSection = () => {
             opacity: 1;
           }
           50% {
-            transform: translateX(-70px) scale(1.3); /* ⬅️ More movement */
+            transform: translateX(-70px) scale(1.3);
             opacity: 0.3;
           }
           100% {
@@ -205,9 +217,8 @@ const StatsSection = () => {
         }
       `}</style>
     </div>
-    </div>
-
   );
 };
 
 export default StatsSection;
+

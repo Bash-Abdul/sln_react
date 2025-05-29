@@ -41,8 +41,12 @@ import React from 'react';
 const ContactForm = () => {
   return (
     <div className="relative">
-      <div className="relative mb-10">
+      {/* <div className="relative mb-10">
         <h1 className='text-xl font-semibold relative z-10 inline-block bg-white'>Contact Us</h1>
+      </div> */}
+      <div className="mb-10 inline-flex gap-2 items-center">
+        <h1 className='text-xl font-semibold inline-block bg-white'>Contact Us</h1>
+        <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
       </div>
 
       <form action="" className='flex flex-col gap-4'>

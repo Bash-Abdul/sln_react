@@ -73,8 +73,9 @@ const contactItems = [
 const ContactText = () => {
   return (
     <div className="relative">
-      <div className="relative mb-10">
-        <h1 className='text-xl font-semibold relative z-10 inline-block bg-white'>Contact Text</h1>
+      <div className="mb-10 inline-flex gap-2 items-center">
+        <h1 className='text-xl font-semibold inline-block bg-white'>Get In Touch</h1>
+        <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
       </div>
 
       <div className='w-full grid grid-cols-1 sm:grid-cols-2 gap-10'>

@@ -25,7 +25,7 @@
 //   const [scrolled, setScrolled] = useState(false);
 
 //   useEffect(() => {
-//     if (!isHomePage) return; 
+//     if (!isHomePage) return;
 
 //     const handleScroll = () => {
 //       setScrolled(window.scrollY > 50);
@@ -57,13 +57,13 @@
 //   );
 // }
 
-
-import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo_color.png';
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo_color.png";
 
 export default function Navbar({ isHomePage }) {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!isHomePage) return;
@@ -71,35 +71,41 @@ export default function Navbar({ isHomePage }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
   const navbarClass = isHomePage
     ? scrolled
-      ? 'bg-white shadow-md text-black'
-      : 'bg-transparent text-white'
-    : 'bg-white shadow-md text-black';
+      ? "bg-white shadow-md text-black"
+      : "bg-transparent text-white"
+    : "bg-white shadow-md text-black";
+
+  const links = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/services", label: "Services" },
+    { to: "/contact", label: "Contact" },
+  ];
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${navbarClass}`}>
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${navbarClass}`}
+    >
       <nav className="w-full max-w-screen-2xl mx-auto px-6 md:px-[5%] lg:px-[10%] py-3 flex items-center justify-between">
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
           <img src={logo} className="w-[6rem]" alt="SLN logo image" />
         </NavLink>
-        <ul className="flex gap-10 text-sm font-medium">
-          {[
-            { to: '/', label: 'Home' },
-            { to: '/about', label: 'About' },
-            { to: '/services', label: 'Services' },
-            { to: '/contact', label: 'Contact' },
-          ].map(({ to, label }) => (
+
+        {/* Desktop menu */}
+        <ul className="hidden md:flex gap-10 text-sm font-medium">
+          {links.map(({ to, label }) => (
             <li key={to}>
               <NavLink
                 to={to}
                 className={({ isActive }) =>
                   `relative pb-1 transition-colors duration-300 ${
-                    isActive ? 'text-blue-600' : 'hover:text-blue-500'
+                    isActive ? "text-blue-600" : "hover:text-blue-500"
                   }`
                 }
               >
@@ -108,7 +114,7 @@ export default function Navbar({ isHomePage }) {
                     relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5
                     after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
                     after:w-0 hover:after:w-full
-                    ${window.location.pathname === to ? 'after:w-full' : ''}
+                    ${window.location.pathname === to ? "after:w-full" : ""}
                   `}
                 >
                   {label}
@@ -117,6 +123,86 @@ export default function Navbar({ isHomePage }) {
             </li>
           ))}
         </ul>
+
+        {/* Mobile Hamburger Icon */}
+        <button
+          onClick={() => setIsMenuOpen(true)}
+          className="md:hidden focus:outline-none cursor-pointer"
+          aria-label="Open Menu"
+        >
+          {/* Hamburger icon SVG */}
+          <svg
+            className="w-6 h-6 text-current"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+
+        {/* Mobile Fullscreen Menu */}
+        {/* Mobile Fullscreen Menu */}
+<div
+  className={`md:hidden fixed inset-0 text-white flex flex-col items-center justify-center space-y-10 z-60
+    transition-opacity duration-300 ease-in-out
+    ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+  `}
+  style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
+>
+  {/* Close icon top-right */}
+  <button
+    onClick={() => setIsMenuOpen(false)}
+    className="absolute top-[5.5%] right-[4.5%] text-white focus:outline-none cursor-pointer"
+    aria-label="Close Menu"
+  >
+    {/* Close icon SVG */}
+    <svg
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox="0 0 24 24"
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  </button>
+
+  {/* Mobile nav links */}
+  <ul className="flex flex-col items-center gap-10 text-sm font-medium">
+    {links.map(({ to, label }) => (
+      <li key={to}>
+        <NavLink
+          to={to}
+          className={({ isActive }) =>
+            `relative pb-1 transition-colors duration-300`
+          }
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span
+            className={`
+              relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5
+              after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
+              after:w-0 hover:after:w-full
+              ${window.location.pathname === to ? "after:w-full" : ""}
+            `}
+          >
+            {label}
+          </span>
+        </NavLink>
+      </li>
+    ))}
+  </ul>
+</div>
+
       </nav>
     </header>
   );
@@ -226,4 +312,3 @@ export default function Navbar({ isHomePage }) {
 //     </header>
 //   );
 // }
-

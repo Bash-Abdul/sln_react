@@ -20,10 +20,10 @@ export default function Footer() {
           <div className='flex items-center lg:items-start gap-5 flex-col'>
             <h1 className='font-semibold'>Quick Links</h1>
             <div className='flex flex-col lg:flex-row items-center gap-5 text-sm'>
-              <Link to={'/about'} className='hover:text-blue-300'>
+              <Link to={'/about'} className='hover:text-blue-700'>
               <p>About</p>
               </Link>
-              <Link to={'/services'} className='hover:text-blue-300'>
+              <Link to={'/services'} className='hover:text-blue-700'>
               <p>Our services</p>
               </Link>
             </div>

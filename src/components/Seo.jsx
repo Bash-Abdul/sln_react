@@ -9,8 +9,10 @@ const SEO = ({ title, description, keywords, canonical }) => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "S.L.N Engineering Limited",
-    "url": "https://slneng.com",
-    "logo": "https://slneng.com/logo.png", // Replace with your actual logo URL if available
+    "url": "https://sln-chi.vercel.app/",
+    "logo": "https://slneng.com/logo.png",
+    "email": "mailto:customercare@slneng.com",
+    "telephone": "+2349153864376", // Replace with your actual logo URL if available
     "sameAs": [
       "https://www.instagram.com/s.l.negineering_ltd?igsh=NmUxbjZtdm0zMWN4",
       "https://www.linkedin.com/in/s-l-n-engineering-lagos-nigeria-a25826300/",

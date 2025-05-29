@@ -148,7 +148,7 @@ export default function Navbar({ isHomePage }) {
         {/* Mobile Fullscreen Menu */}
         <div
           className={`md:hidden fixed w-screen h-screen inset-0 text-white flex flex-col items-center justify-center space-y-10 z-60
-    transition-opacity duration-300 ease-in-out
+    transition-opacity duration-300 ease-in-out overflow-x-hidden
     ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
   `}
           style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}

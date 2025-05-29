@@ -341,7 +341,7 @@ const Welcome = () => {
         >
           {features.map((feature, index) => (
             <div key={index}>
-              <div className='flex items-center justify-between mb-3 relative flex-col-reverse gap-4'>
+              <div className='flex items-center justify-between mb-3 relative flex-col-reverse lg:flex-row gap-4'>
                 <h1 className='font-semibold'>{feature.title}</h1>
                 <h1 className='text-5xl text-blue-200 font-semibold static lg:absolute z-[-1000] left-[-4%]'>
                   {feature.number}

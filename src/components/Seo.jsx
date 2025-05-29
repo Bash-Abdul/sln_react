@@ -9,7 +9,7 @@ const SEO = ({ title, description, keywords, canonical }) => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "S.L.N Engineering Limited",
-    "url": "https://sln-chi.vercel.app/",
+    "url": "https://slneng.com",
     "logo": "https://slneng.com/logo.png",
     "email": "mailto:customercare@slneng.com",
     "telephone": "+2349153864376", // Replace with your actual logo URL if available

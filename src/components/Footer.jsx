@@ -34,7 +34,26 @@ export default function Footer() {
         <div className='flex flex-col gap-5'>
           <h1 className='font-semibold'>Connect with Us</h1>
           <div className='flex items-center gap-3 cursor-pointer'>
-          <FaXTwitter /><FaInstagram /><FaLinkedinIn /><FaFacebookF /><IoIosMail />
+          <a
+    href="https://www.instagram.com/s.l.negineering_ltd?igsh=NmUxbjZtdm0zMWN4"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="SLN Engineering on Instagram"
+  >
+    <FaInstagram />
+  </a>
+  <a href="mailto:customercare@slneng.com" target="_blank" rel="noopener noreferrer">
+  <IoIosMail />
+</a>
+  <a
+    href="https://www.linkedin.com/in/s-l-n-engineering-lagos-nigeria-a25826300/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="SLN Engineering on Linkedin"
+  >
+    <FaLinkedinIn />
+  </a>
+          <FaXTwitter /><FaFacebookF />
           </div>
         </div>
       </div>

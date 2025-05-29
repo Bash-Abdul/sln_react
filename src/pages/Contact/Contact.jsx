@@ -45,7 +45,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.9, ease: 'easeIn' }}
         >
           <ContactForm />
         </motion.div>
@@ -54,7 +54,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.9, ease: 'easeIn' }}
         >
           <ContactText />
         </motion.div>

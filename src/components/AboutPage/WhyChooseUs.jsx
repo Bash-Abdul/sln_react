@@ -15,6 +15,7 @@ export default function WhyChooseUs() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, ease: "easeIn" }}
         viewport={{ once: true }}
+        loading="lazy"
       />
 
       <motion.div

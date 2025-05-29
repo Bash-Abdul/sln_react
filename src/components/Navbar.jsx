@@ -104,8 +104,7 @@ export default function Navbar({ isHomePage }) {
               <NavLink
                 to={to}
                 className={({ isActive }) =>
-                  `relative pb-1 transition-colors duration-300 ${
-                    isActive ? "text-blue-600" : "hover:text-blue-500"
+                  `relative pb-1 transition-colors duration-300 ${isActive ? "text-blue-600" : "hover:text-blue-500"
                   }`
                 }
               >
@@ -147,61 +146,60 @@ export default function Navbar({ isHomePage }) {
         </button>
 
         {/* Mobile Fullscreen Menu */}
-        {/* Mobile Fullscreen Menu */}
-<div
-  className={`md:hidden fixed inset-0 text-white flex flex-col items-center justify-center space-y-10 z-60
+        <div
+          className={`md:hidden fixed w-screen h-screen inset-0 text-white flex flex-col items-center justify-center space-y-10 z-60
     transition-opacity duration-300 ease-in-out
     ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
   `}
-  style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
->
-  {/* Close icon top-right */}
-  <button
-    onClick={() => setIsMenuOpen(false)}
-    className="absolute top-[5.5%] right-[4.5%] text-white focus:outline-none cursor-pointer"
-    aria-label="Close Menu"
-  >
-    {/* Close icon SVG */}
-    <svg
-      className="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      viewBox="0 0 24 24"
-    >
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
-    </svg>
-  </button>
-
-  {/* Mobile nav links */}
-  <ul className="flex flex-col items-center gap-10 text-sm font-medium">
-    {links.map(({ to, label }) => (
-      <li key={to}>
-        <NavLink
-          to={to}
-          className={({ isActive }) =>
-            `relative pb-1 transition-colors duration-300`
-          }
-          onClick={() => setIsMenuOpen(false)}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
         >
-          <span
-            className={`
+          {/* Close icon top-right */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-[5.5%] right-[4.5%] text-white focus:outline-none cursor-pointer"
+            aria-label="Close Menu"
+          >
+            {/* Close icon SVG */}
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+
+          {/* Mobile nav links */}
+          <ul className="flex flex-col items-center gap-10 text-sm font-medium">
+            {links.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    `relative pb-1 transition-colors duration-300`
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span
+                    className={`
               relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5
               after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300
               after:w-0 hover:after:w-full
               ${window.location.pathname === to ? "after:w-full" : ""}
             `}
-          >
-            {label}
-          </span>
-        </NavLink>
-      </li>
-    ))}
-  </ul>
-</div>
+                  >
+                    {label}
+                  </span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
 
       </nav>
     </header>
